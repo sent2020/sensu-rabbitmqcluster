@@ -1,0 +1,37 @@
+---
+- name: rabbitmq_ha_config | checking if rabbitmqadmin is installed
+  stat:
+    path: /usr/sbin/rabbitmqadmin
+  register: rabbitmqadmin_check
+
+- name: rabbitmq_ha_config | install rabbitMQ admin
+  shell: wget http://guest:guest@localhost:15672/cli/rabbitmqadmin
+  become: true
+  when: not rabbitmqadmin_check['stat']['exists']
+
+- name: rabbitmq_ha_config | moving the rabbitMQ Admin
+  shell: mv rabbitmqadmin /usr/sbin
+  become: true
+  when: not rabbitmqadmin_check['stat']['exists']
+
+- name: rabbitmq_ha_config | making executable rabbitMQ Admin
+  shell: chmod +x /usr/sbin/rabbitmqadmin
+  notify: restart rabbitmq-server
+  become: true
+  when: not rabbitmqadmin_check['stat']['exists']
+
+- name: rabbitmq_ha_config | creating vhost
+  command: rabbitmqadmin declare vhost name=/sensu
+  run_once: true
+  become: true
+
+- name: rabbitmq_ha_config | creating vhost permission
+  command: rabbitmqadmin declare permission vhost=/sensu user=sensu configure='.*' write='.*' read='.*'
+  run_once: true
+  become: true
+
+- name: rabbitmq_ha_config | creating vhost policy
+  command:  rabbitmqadmin declare policy name=ha-sensu pattern="^(results$|keepalives$)" definition='{"ha-mode":"all","ha-sync-mode":"automatic"}' -p /sensu --username=rabbitmqadmin --password=rabbitmqadmin
+  run_once: true
+  become: true
+
