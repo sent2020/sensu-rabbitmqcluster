@@ -49,6 +49,7 @@ rabbitmq_users:
     # https://www.rabbitmq.com/management.html
     tags: 'administrator'
 
+rabbitmq_sensu_users:
   - name: 'sensu'
     password: 'secret'
     vhost: '/sensu'
