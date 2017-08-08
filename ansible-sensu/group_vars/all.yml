@@ -1,3 +1,3 @@
 rabbitmq_host: 10.0.0.61
-redis_host: 'sensuredis.exehok.ng.0001.usw1.cache.amazonaws.com'
+redis_host: 'exehok.ng.usw1.cache.amazonaws.com'
 sensu_api_host: 10.0.0.199
