@@ -31,7 +31,8 @@
   become: true
 
 - name: rabbitmq_ha_config | creating vhost policy
-  command:  rabbitmqadmin declare policy name=ha-sensu pattern="^(results$|keepalives$)" definition='{"ha-mode":"all","ha-sync-mode":"automatic"}' -p /sensu --username= "{{ item.name }}" --password= "{{ item.password }}"
+  #command:  rabbitmqadmin declare policy name=ha-sensu pattern="^(results$|keepalives$)" definition='{"ha-mode":"all","ha-sync-mode":"automatic"}' -p /sensu --username=rabbitmqadmin --password=rabbitmqadmin
+  command:  rabbitmqadmin declare policy name=ha-sensu pattern="^(results$|keepalives$)" definition='{"ha-mode":"all","ha-sync-mode":"automatic"}' -p /sensu --username="{{item.name}}" --password="{{item.password}}"
   with_items: "{{ rabbitmq_users }}"
   run_once: true
   become: true

@@ -24,8 +24,8 @@
         rabbitmq_enable_clustering and
         not clustered['stat']['exists']
 
-- include: rabbitmq_users.yml
-  when: rabbitmq_users is defined
+#- include: rabbitmq_users.yml
+#  when: rabbitmq_users is defined
 
 - include: rabbitmq_ha_config.yml
   when: >
@@ -33,5 +33,5 @@
         rabbitmq_enable_clustering and
         rabbitmq_config is defined
 
-#- include: rabbitmq_users.yml
-#  when: rabbitmq_users is defined
+- include: rabbitmq_users.yml
+  when: rabbitmq_users is defined

@@ -12,5 +12,25 @@
       gpgcheck: no
       enabled: yes
 
+  - name: Ensure the Sensu dashboard Yum repo is present
+    yum_repository:
+      name: sensu-dashboard
+      description: The Sensu Core yum repository
+      baseurl: "{{ sensu_yum_dashboard_repo_url }}"
+      gpgcheck: no
+      enabled: yes
+
+  - name: Ensure the Sensu Core Yum repo is present
+    yum_repository:
+      name: sensu
+      description: The Sensu Core yum repository
+      baseurl: "{{ sensu_yum_core_repo_url }}"
+      gpgcheck: no
+      enabled: yes
+
+
   - name: Ensure Sensu is installed
     yum: name={{ sensu_package }} state={{ sensu_pkg_state }}
+  
+  - name: Ensure Sensu is installed
+    yum: name={{ sensu_core_package }} state={{ sensu_pkg_state }}

@@ -18,6 +18,7 @@
       - filters
       - handlers
       - mutators
+      - definitions
 
   - name: Ensure any remote plugins defined are present
     shell: sensu-install -p {{ item }}

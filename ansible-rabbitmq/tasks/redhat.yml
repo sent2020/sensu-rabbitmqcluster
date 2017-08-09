@@ -12,11 +12,11 @@
   yum_repository:
     name: erlang
     description: Erlang YUM repo
-    baseurl: https://dl.bintray.com/rabbitmq/rpm/erlang/19/el/6
+    baseurl: https://dl.bintray.com/rabbitmq/rpm/erlang/19/el/6/x86_64/
     gpgcheck: 1
     gpgkey: https://www.rabbitmq.com/rabbitmq-release-signing-key.asc
     repo_gpgcheck: 0
-    enabled: 1
+    enabled: 0
 
 
 - name: redhat | installing erlang

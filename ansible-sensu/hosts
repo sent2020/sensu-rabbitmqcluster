@@ -1,0 +1,8 @@
+[sensu_masters]
+10.0.0.50
+[rabbitmq_servers]
+10.0.0.50
+10.0.0.51
+10.0.0.53
+[webservers]
+10.0.0.50

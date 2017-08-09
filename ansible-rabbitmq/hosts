@@ -1,4 +1,4 @@
 [rabbitmq_cluster]
-ip-10-0-0-61 ansible_ssh_host=10.0.0.61
-ip-10-0-0-12 ansible_ssh_host=10.0.0.12
-ip-10-0-0-195 ansible_ssh_host=10.0.0.195
+ip-10-0-0-50 ansible_ssh_host=10.0.0.50
+ip-10-0-0-161 ansible_ssh_host=10.0.0.161
+ip-10-0-0-63 ansible_ssh_host=10.0.0.63
