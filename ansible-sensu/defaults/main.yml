@@ -13,8 +13,8 @@ sensu_enterprise_package: sensu-enterprise
 sensu_enterprise_dashboard_package: sensu-enterprise-dashboard
 
 # Sensu repo urls
-sensu_yum_repo_url: "http://7906610391:v5b7gr5pg2ne92om@enterprise.sensuapp.com/yum/noarch/"
-sensu_yum_dashboard_repo_url: "http://7906610391:v5b7gr5pg2ne92om@enterprise.sensuapp.com/yum/x86_64/"
+sensu_yum_repo_url: "@enterprise.sensuapp.com/yum/noarch/"
+sensu_yum_dashboard_repo_url: "@enterprise.sensuapp.com/yum/x86_64/"
 sensu_yum_core_repo_url: "https://sensu.global.ssl.fastly.net/yum/6/$basearch/"
 sensu_apt_repo_url: "deb     http://repositories.sensuapp.org/apt {{ ansible_distribution_release }} main"
 sensu_apt_key_url: "http://repositories.sensuapp.org/apt/pubkey.gpg"
