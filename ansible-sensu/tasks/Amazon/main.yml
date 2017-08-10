@@ -34,3 +34,4 @@
   
   - name: Ensure Sensu is installed
     yum: name={{ sensu_core_package }} state={{ sensu_pkg_state }}
+    when: sensu_client
