@@ -2,6 +2,7 @@
 # Sensu enterprise credential
 # Variables for Sensu Enterprise License
 se_enterprise: true
+sensu_client: true
 se_user: '' 
 se_pass: ''
 
