@@ -6,7 +6,7 @@
 
   - name: Ensure the Sensu Core Yum repo is present
     yum_repository:
-      name: sensu
+      name: sensu-enterprise
       description: The Sensu Core yum repository
       baseurl: "{{ sensu_yum_repo_url }}"
       gpgcheck: no
