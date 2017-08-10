@@ -35,3 +35,5 @@
 
 - include: rabbitmq_users.yml
   when: rabbitmq_users is defined
+  
+- include: rabbitmq_ha_sensu.yml
