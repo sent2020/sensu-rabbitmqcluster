@@ -24,4 +24,7 @@
   command: rabbitmqadmin declare vhost name=/sensu
   run_once: true
   become: true
+<<<<<<< HEAD
 
+=======
+>>>>>>> bd5be039aec94b7293b47ad39afc4506ca9808b3

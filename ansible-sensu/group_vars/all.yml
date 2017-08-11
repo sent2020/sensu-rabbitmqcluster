@@ -1,4 +1,4 @@
 #rabbitmq_host: "{{ ansible_eth0.ipv4.address }}"
-redis_host: 'sensuredis.exehok.ng.0001.usw1.cache.amazonaws.com'
+redis_host: 'ehok.ng.0001.usw1.cache.amazonaws.com'
 sensu_api_host: "{{ ansible_eth0.ipv4.address }}"
 #sensu_client: true
