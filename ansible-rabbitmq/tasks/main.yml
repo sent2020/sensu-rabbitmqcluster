@@ -32,9 +32,5 @@
 
 - include: rabbitmq_users.yml
   when: rabbitmq_users is defined
-<<<<<<< HEAD
 
-=======
-  
->>>>>>> bd5be039aec94b7293b47ad39afc4506ca9808b3
 - include: rabbitmq_ha_sensu.yml

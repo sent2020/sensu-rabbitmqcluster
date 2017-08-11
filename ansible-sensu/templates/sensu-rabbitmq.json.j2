@@ -6,7 +6,9 @@
     "port": {{ rabbitmq_port }},
     "vhost": "{{ rabbitmq_sensu_vhost }}",
     "user": "{{ rabbitmq_sensu_user_name }}",
-    "password": "{{ rabbitmq_sensu_password }}"
+    "password": "{{ rabbitmq_sensu_password }}",
+    "heartbeat": 30,
+    "prefetch": 50
  }{% if not loop.last %},{% endif %}
 
     {% endfor %}
