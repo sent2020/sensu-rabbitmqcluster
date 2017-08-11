@@ -6,7 +6,7 @@
 
   - name: Ensure the Sensu Core Yum repo is present
     yum_repository:
-      name: sensu
+      name: sensu-enterprise
       description: The Sensu Core yum repository
       baseurl: "{{ sensu_yum_repo_url }}"
       gpgcheck: no
@@ -32,5 +32,6 @@
   - name: Ensure Sensu is installed
     yum: name={{ sensu_package }} state={{ sensu_pkg_state }}
   
-  - name: Ensure Sensu is installed
+  - name: Ensure Sensu client is installed
     yum: name={{ sensu_core_package }} state={{ sensu_pkg_state }}
+    when: sensu_client

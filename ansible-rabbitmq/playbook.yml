@@ -5,6 +5,7 @@
     etc_hosts_pri_dns_name: '{{ pri_domain_name }}'
     pri_domain_name: 'us-west-1.compute.internal'
     rabbitmq_enable_clustering: true
+    rabbitmq_config_ha: true
     rabbitmq_master: "{{ groups['rabbitmq_cluster'][0] }}"
   roles:
     - role: ansible-etc-hosts

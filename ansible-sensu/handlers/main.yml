@@ -6,8 +6,8 @@
   - name: restart redis service
     service: name={{ redis_service_name }} state=restarted
 
-  - name: restart uchiwa service
-    service: name={{ uchiwa_service_name }} state=restarted
+#  - name: restart uchiwa service
+#    service: name={{ uchiwa_service_name }} state=restarted
 
   - name: restart sensu-server service
     service: name={{ sensu_server_service_name }} state=restarted

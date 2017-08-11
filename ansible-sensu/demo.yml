@@ -3,3 +3,4 @@
    roles:
      - { role: ansible-sensu, sensu_master: true, sensu_include_dashboard: true, se_enterprise: true  }
 
+ #- hosts: sensu_masters

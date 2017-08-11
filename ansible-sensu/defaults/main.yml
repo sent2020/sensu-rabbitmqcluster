@@ -2,6 +2,7 @@
 # Sensu enterprise credential
 # Variables for Sensu Enterprise License
 se_enterprise: true
+sensu_client: true
 se_user: '' 
 se_pass: ''
 
@@ -37,12 +38,12 @@ rabbitmq_config_path: /etc/rabbitmq
 rabbitmq_config_template: rabbitmq.config.j2
 rabbitmq_enable_ssl: true
 rabbitmq_host: "{{ groups['rabbitmq_servers'][0] }}"
-rabbitmq_port: 5671
+rabbitmq_port: 5672
 rabbitmq_pkg_state: present
 rabbitmq_server: false
 rabbitmq_service_name: rabbitmq-server
 rabbitmq_sensu_user_name: sensu
-rabbitmq_sensu_password: sensu
+rabbitmq_sensu_password: secret
 rabbitmq_sensu_vhost: /sensu
 
 # redis server properties
@@ -62,8 +63,8 @@ sensu_redis_config: sensu-redis.json.j2
 sensu_api_host: "{{ groups['sensu_masters'][0] }}"
 sensu_api_port: 4567
 sensu_api_ssl: "false"
-sensu_api_user_name: admin
-sensu_api_password: secret
+sensu_api_user_name: 
+sensu_api_password: 
 sensu_api_uchiwa_path: ''
 sensu_api_timeout: 5000
 sensu_client_config: client.json.j2
